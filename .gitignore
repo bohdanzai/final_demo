@@ -1,0 +1,75 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@bohdanzai
+olap74 /
+ecs-python-tg
+Public
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+
+    Insights
+
+ecs-python-tg/.gitignore
+@olap74
+olap74 Terraform config added
+Latest commit abc776c on 24 Jul 2021
+History
+2 contributors
+@olap74
+@alex-laptiev-sp
+29 lines (26 sloc) 341 Bytes
+# Compiled files
+*.tfstate
+*.tfstate.backup
+.terraform.tfstate.lock.info
+.DS_Store
+.vscode
+.terraform.lock.hcl
+terraform.tfvars
+secrets.hcl
+secret.tfvars
+
+# Module directory
+.terraform/
+.terragrunt-cache/
+
+lib .\roteros.dll loaded
+*.py[cod]
+__pycache__
+.pytest_cache/
+*.egg-info
+pip-wheel-metadata
+.env
+.venv
+
+tags
+*~
+*.sw[op]
+.vscode
+.idea
+
+    © 2022 GitHub, Inc.
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+Loading complete

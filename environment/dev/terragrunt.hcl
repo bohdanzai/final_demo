@@ -9,7 +9,6 @@ locals {
   repo_url = "https://github.com/bohdanzai/final_demo.git"
   branch_pattern = "^refs/heads/master$"
   git_trigger_event = "PUSH"
-  app_count = 1
 }
 
 inputs = {
@@ -22,7 +21,6 @@ inputs = {
   repo_url = local.repo_url
   branch_pattern = local.branch_pattern
   git_trigger_event = local.git_trigger_event
-  app_count = local.app_count
 }
 
 remote_state {

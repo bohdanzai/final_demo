@@ -15,6 +15,6 @@ output "app_name" {
 }
 
 output "subnets" {
-   value = [for v in aws_subnet.publicsubnet : v.id]
-  # value = [for v in aws_subnet.privatesubnet : v.id]
+  #  value = [for v in aws_subnet.publicsubnet : v.id]
+   value = [for v in aws_subnet.privatesubnet : v.id]
 }

@@ -52,11 +52,11 @@ resource "aws_codebuild_project" "project" {
     git_clone_depth     = 1
     report_build_status = "true"
   }
-  # vpc_config {
-  #   vpc_id             = var.vpc_id
-  #   subnets            = var.subnets
-  #   security_group_ids = [aws_security_group.codebuild_sg.id]
-  # }
+  vpc_config {
+    vpc_id             = var.vpc_id
+    subnets            = var.subnets
+    security_group_ids = [aws_security_group.codebuild_sg.id]
+  }
 }
 resource "aws_codebuild_webhook" "develop_webhook" {
   project_name = aws_codebuild_project.project.name

@@ -35,13 +35,10 @@ phases:
       - echo "Building version ${TAG}"
       - make build
       - cd "$CODEBUILD_SRC_DIR"
-      # - RUNNING_TASKS=$(aws ecs list-tasks --cluster ${APP_NAME}-${ENV}-cluster | jq -r .taskArns[] | tr '/' ' ' | awk '{print$3}')
-      # - for task in $RUNNING_TASKS; do aws ecs stop-task --cluster ${APP_NAME}-${ENV}-cluster --task $task; done
       - terragrunt plan --terragrunt-working-dir environment/dev/ecs/ -var="image_tag=${TAG}" -no-color -input=false -out plan.out
       - terragrunt apply --terragrunt-working-dir environment/dev/ecs/ -auto-approve -no-color -input=false plan.out
-      - sleep 5
       - RUNNING_TASKS=$(aws ecs list-tasks --cluster ${APP_NAME}-${ENV}-cluster | jq -r .taskArns[] | tr '/' ' ' | awk '{print$3}')
-      - echo $RUNNING_TASKS
+      - echo "$RUNNING_TASKS"
       - for task in $RUNNING_TASKS; do aws ecs stop-task --cluster ${APP_NAME}-${ENV}-cluster --task $task; done
       - aws ecs update-service --force-new-deployment --service ${APP_NAME}-${ENV}-service --cluster ${APP_NAME}-${ENV}-cluster
 

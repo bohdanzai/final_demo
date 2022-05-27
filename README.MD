@@ -6,6 +6,12 @@
 
 <h1>Infrastructure</h1>
 
+<h2>Codebuild</h2>
+
+- Creates Codebuild project
+- Creates GIT webhook
+- Assigns roles and policies 
+
 <h2>ECR</h2>
 
 - Creates ECR repository
